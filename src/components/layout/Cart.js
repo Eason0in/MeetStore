@@ -1,8 +1,12 @@
-import React from 'react'
-import { Dropdown, ListGroup, Row, Col, Image } from 'react-bootstrap'
+import React, { useContext } from 'react'
+import { Dropdown, ListGroup } from 'react-bootstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { CartContext } from '../../contexts/CartContext'
+import CartItem from './CartItem'
+import CartSum from './CartSum'
 
 const Cart = () => {
+  const { cartItems } = useContext(CartContext)
   return (
     <Dropdown alignRight>
       <Dropdown.Toggle variant="Secondary" id="dropdown-basic">
@@ -12,13 +16,8 @@ const Cart = () => {
       <Dropdown.Menu className="cart-dropdown-menu">
         <ListGroup variant="flush" horizontal="lg">
           <ListGroup.Item>
-            <Row>
-              <Col sm={3}>
-                <Image src="https://picsum.photos/id/30/1024/768" rounded fluid="false" />
-              </Col>
-              <Col sm={5}>Cras justo odiossssssssssssssssss</Col>
-              <Col sm={4}>price ：20</Col>
-            </Row>
+            {cartItems.length ? cartItems.map(item => <CartItem key={item.id} item={item} />) : ''}
+            <CartSum />
           </ListGroup.Item>
         </ListGroup>
       </Dropdown.Menu>

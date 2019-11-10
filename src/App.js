@@ -9,6 +9,7 @@ import { fab } from '@fortawesome/free-brands-svg-icons'
 import { fas } from '@fortawesome/free-solid-svg-icons'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import ProductContextProvider from './contexts/ProductContext'
+import CartContextProvider from './contexts/CartContext'
 
 library.add(fab, fas)
 
@@ -16,14 +17,16 @@ function App() {
   return (
     <BrowserRouter>
       <div className="App">
-        <NavBar />
-        <Switch>
-          <ProductContextProvider>
-            <Route exact path="/" component={ProductList} />
-            <Route path="/productdetail/:id" component={ProductDetail} />
-            <Route path="/complaint" component={Complaint} />
-          </ProductContextProvider>
-        </Switch>
+        <CartContextProvider>
+          <NavBar />
+          <Switch>
+            <ProductContextProvider>
+              <Route exact path="/" component={ProductList} />
+              <Route path="/productdetail/:id" component={ProductDetail} />
+              <Route path="/complaint" component={Complaint} />
+            </ProductContextProvider>
+          </Switch>
+        </CartContextProvider>
       </div>
     </BrowserRouter>
   )

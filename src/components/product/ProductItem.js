@@ -1,10 +1,13 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Card, Button } from 'react-bootstrap'
+import { CartContext } from '../../contexts/CartContext'
 
 const ProductItem = ({ product, size }) => {
+  const { addCartItem } = useContext(CartContext)
+
   const handleClick = e => {
     e.preventDefault()
-    alert('click')
+    addCartItem(product)
   }
   return (
     <div className="product-item">

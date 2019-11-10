@@ -6,7 +6,6 @@ import { Link } from 'react-router-dom'
 
 const ProductList = () => {
   const { products } = useContext(ProductContext)
-  console.log(products)
   return (
     <div className="product-list mt-3">
       <Container>
@@ -19,7 +18,7 @@ const ProductList = () => {
               as={Link}
               to={'/productdetail/' + product.id}
             >
-              <ProductItem product={product} />
+              <ProductItem product={product} size={'18rem'} />
             </Col>
           ))}
         </Row>

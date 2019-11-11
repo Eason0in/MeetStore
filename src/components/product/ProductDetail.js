@@ -2,11 +2,13 @@ import React, { useContext } from 'react'
 import { Container, Media, Button } from 'react-bootstrap'
 import { ProductContext } from '../../contexts/ProductContext'
 import { Link } from 'react-router-dom'
+import { CartContext } from '../../contexts/CartContext'
 
 const ProductDetail = props => {
   const { id } = props.match.params
   const { products } = useContext(ProductContext)
   const detailData = products.find(product => product.id.toString() === id)
+  const { addCartItem } = useContext(CartContext)
   return (
     <div className="product-detail mt-3">
       <Container>
@@ -27,11 +29,12 @@ const ProductDetail = props => {
             <h5 className="mb-3">{detailData.title}</h5>
             <p>{detailData.subtitle}</p>
             <p className="mt-4 mb-5">{detailData.description}</p>
+            <h5 className="mt-4 mb-5">$ {detailData.price}</h5>
             <div className="button-group mt-5">
-              <Button variant="outline-info" size="lg" className="mr-2">
+              <Button as={Link} to="/pay" variant="outline-info" size="lg" className="mr-2">
                 立即結帳
               </Button>
-              <Button variant="outline-danger" size="lg">
+              <Button onClick={() => addCartItem(detailData)} variant="outline-danger" size="lg">
                 加入購物車
               </Button>
             </div>

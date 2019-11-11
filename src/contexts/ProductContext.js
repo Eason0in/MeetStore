@@ -10,7 +10,7 @@ const ProductContextProvider = props => {
     axios.get(API_URL + 'products').then(res => {
       setProduct(res.data)
     })
-  }, [products])
+  }, [])
   return <ProductContext.Provider value={{ products }}>{props.children}</ProductContext.Provider>
 }
 

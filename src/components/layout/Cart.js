@@ -17,7 +17,7 @@ const Cart = () => {
         <ListGroup variant="flush" horizontal="lg">
           <ListGroup.Item>
             {cartItems.length ? cartItems.map(item => <CartItem key={item.id} item={item} />) : ''}
-            <CartSum />
+            <CartSum isCart={true} />
           </ListGroup.Item>
         </ListGroup>
       </Dropdown.Menu>

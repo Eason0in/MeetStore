@@ -10,7 +10,19 @@ const CartContextProvider = props => {
     setItem([...cartItems, { id, title, price, img }])
   }
 
-  return <CartContext.Provider value={{ cartItems, addCartItem }}>{props.children}</CartContext.Provider>
+  const cleanCartItem = () => {
+    setItem([])
+  }
+
+  const removeCartItem = id => {
+    return cartItems.filter(item => item.id !== id)
+  }
+
+  return (
+    <CartContext.Provider value={{ cartItems, addCartItem, cleanCartItem, removeCartItem }}>
+      {props.children}
+    </CartContext.Provider>
+  )
 }
 
 export default CartContextProvider

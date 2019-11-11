@@ -1,7 +1,8 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import { Form, Button } from 'react-bootstrap'
 import { useHistory } from 'react-router-dom'
 import axios from 'axios'
+import { CartContext } from '../../contexts/CartContext'
 
 const API_URL = 'http://localhost:3001/'
 
@@ -10,10 +11,15 @@ const PayForm = () => {
   const [email, setEmail] = useState('')
   const [address, setAddress] = useState('')
   const hisotry = useHistory()
+  const { cleanCartItem } = useContext(CartContext)
+
   const handleSubmit = e => {
     e.preventDefault()
     axios.post(API_URL + 'orders', { name, email, address }).then(res => {
-      if (res.status === 201) hisotry.push('/receipt')
+      if (res.status === 201) {
+        hisotry.push('/receipt')
+        cleanCartItem()
+      }
     })
   }
   return (

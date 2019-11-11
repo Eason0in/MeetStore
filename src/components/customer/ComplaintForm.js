@@ -8,6 +8,7 @@ const ComplaintForm = ({ handleSubmit }) => {
   return (
     <div className="complaint mt-3">
       <Container>
+        <h2>有什麼建議想跟我們說的嗎?</h2>
         <Form onSubmit={e => handleSubmit(e, name, email, textarea)}>
           <Form.Group controlId="name">
             <Form.Label>姓名</Form.Label>

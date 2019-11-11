@@ -15,7 +15,7 @@ const CartContextProvider = props => {
   }
 
   const removeCartItem = id => {
-    return cartItems.filter(item => item.id !== id)
+    return setItem(cartItems.filter(item => item.id !== id))
   }
 
   return (

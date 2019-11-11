@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { Dropdown, ListGroup } from 'react-bootstrap'
+import { Dropdown, ListGroup, Badge } from 'react-bootstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { CartContext } from '../../contexts/CartContext'
 import CartItem from './CartItem'
@@ -7,10 +7,14 @@ import CartSum from './CartSum'
 
 const Cart = () => {
   const { cartItems } = useContext(CartContext)
+  const cartCount = cartItems.length ? cartItems.length : 0
   return (
     <Dropdown alignRight>
       <Dropdown.Toggle variant="Secondary" id="dropdown-basic">
         <FontAwesomeIcon icon="shopping-cart" size="lg" />
+        <Badge variant="warning" pill>
+          {cartCount}
+        </Badge>
       </Dropdown.Toggle>
 
       <Dropdown.Menu className="cart-dropdown-menu">

@@ -1,68 +1,63 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# MeetStore
 
-## Available Scripts
+此專案提供使用者購買商品，例如:加入購物車、刪除、結帳及客訴表單等
 
-In the project directory, you can run:
+## 功能列表
 
-### `npm start`
+- 商品加入購物車
+- 商品從購物車刪除
+- 點選商品可以觀看詳細資料
+- 購物車即時更新
+- 客訴表單供使用者回饋意見
+- 結帳後顯示購買結果
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### 安裝
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+1.開啟終端機(Terminal)cd 到存放專案本機位置並執行:
 
-### `npm test`
+```
+git clone https://github.com/Eason0in/MeetStore.git
+```
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+2.初始
 
-### `npm run build`
+```
+cd MeetStore  //切至專案資料夾
+```
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```
+npm install  //安裝套件
+```
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+3.開啟 json-server (後端 API)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```
+npm run json  //啟動後端 API
+```
 
-### `npm run eject`
+4.開啟程式
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+```
+npm start  //執行程式
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+[http://localhost:3000](http://localhost:3000)開始使用程式
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Screen Photo
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+![首頁](https://github.com/Eason0in/MeetStore/blob/master/public/img/index.JPG)
+![商品詳細](https://github.com/Eason0in/MeetStore/blob/master/public/img/detail.JPG)
+![購物車](https://github.com/Eason0in/MeetStore/blob/master/public/img/cart.JPG)
+![付款](https://github.com/Eason0in/MeetStore/blob/master/public/img/pay.JPG)
+![購買結果](https://github.com/Eason0in/MeetStore/blob/master/public/img/result.JPG)
 
-## Learn More
+## 使用工具
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- [Visual Studio Code](https://visualstudio.microsoft.com/zh-hant/) - 開發環境
+- [React](https://reactjs.org/) - 前端框架
+- [JSON Server](https://www.npmjs.com/package/json-server) - 模擬後端 server
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## 致謝
 
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+- [提供此需求](https://meet.jobs/zh-TW) - meet.jobs
+- [開發者](https://github.com/Eason0in)- Eason

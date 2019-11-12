@@ -1,17 +1,23 @@
-import React, { createContext, useState, useEffect } from 'react'
-import axios from 'axios'
-const API_URL = 'http://localhost:3001/'
+import React, { createContext, useState, useEffect } from "react";
+import axios from "axios";
+const API_URL = "http://localhost:3001/";
 
-export const ProductContext = createContext()
+export const ProductContext = createContext();
 
 const ProductContextProvider = props => {
-  const [products, setProduct] = useState([])
-  useEffect(() => {
-    axios.get(API_URL + 'products').then(res => {
-      setProduct(res.data)
-    })
-  }, [])
-  return <ProductContext.Provider value={{ products }}>{props.children}</ProductContext.Provider>
-}
+  const [products, setProduct] = useState([]);
 
-export default ProductContextProvider
+  //將後方商品資料撈回來
+  useEffect(() => {
+    axios.get(API_URL + "products").then(res => {
+      setProduct(res.data);
+    });
+  }, []);
+  return (
+    <ProductContext.Provider value={{ products }}>
+      {props.children}
+    </ProductContext.Provider>
+  );
+};
+
+export default ProductContextProvider;

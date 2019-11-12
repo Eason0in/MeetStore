@@ -1,7 +1,7 @@
-import React from 'react'
-import { Navbar, Nav, Container, NavItem } from 'react-bootstrap'
-import Cart from './Cart'
-import { Link } from 'react-router-dom'
+import React from "react";
+import { Navbar, Nav, Container, NavItem } from "react-bootstrap";
+import Cart from "./Cart";
+import { Link } from "react-router-dom";
 
 const NavBar = () => {
   return (
@@ -10,9 +10,7 @@ const NavBar = () => {
         <Navbar.Brand as={Link} to="/">
           MeetStore
         </Navbar.Brand>
-
         <Navbar.Toggle />
-
         <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
           <Nav>
             <NavItem>
@@ -20,13 +18,12 @@ const NavBar = () => {
                 客訴表單
               </Nav.Link>
             </NavItem>
-
             <Cart />
           </Nav>
         </Navbar.Collapse>
       </Container>
     </Navbar>
-  )
-}
+  );
+};
 
-export default NavBar
+export default NavBar;

@@ -1,14 +1,15 @@
-import React, { useContext } from 'react'
-import { Card, Button } from 'react-bootstrap'
-import { CartContext } from '../../contexts/CartContext'
+import React, { useContext } from "react";
+import { Card, Button } from "react-bootstrap";
+import { CartContext } from "../../contexts/CartContext";
 
 const ProductItem = ({ product, size }) => {
-  const { addCartItem } = useContext(CartContext)
+  const { addCartItem } = useContext(CartContext);
 
+  //把商品加入購物車
   const handleClick = e => {
-    e.preventDefault()
-    addCartItem(product)
-  }
+    e.preventDefault();
+    addCartItem(product);
+  };
   return (
     <div className="product-item">
       <Card border="dark" style={{ width: size }}>
@@ -22,7 +23,7 @@ const ProductItem = ({ product, size }) => {
         </Card.Body>
       </Card>
     </div>
-  )
-}
+  );
+};
 
-export default ProductItem
+export default ProductItem;

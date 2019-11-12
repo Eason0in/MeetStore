@@ -38,6 +38,8 @@ npm run json  //啟動後端 API
 4.開啟程式
 
 ```
+另開一個終端機
+
 npm start  //執行程式
 ```
 
